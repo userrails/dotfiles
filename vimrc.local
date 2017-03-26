@@ -51,9 +51,6 @@ if exists('+colorcolumn')
   set colorcolumn=80
 endif
 
-" Open new split panes to right and bottom, which feels more natural
-" set splitbelow
-set splitright
 " Auto resize Vim splits to active split
 set winwidth=104
 set winheight=5
@@ -177,16 +174,17 @@ endfunction
 map <leader>n :call RenameFile()<cr>
 
 " vim-test plugin
-" nmap <silent> <leader>t :TestNearest<CR>
-" nmap <silent> <leader>s :TestFile<CR>
-" nmap <silent> <leader>a :TestSuite<CR>
-" nmap <silent> <leader>r :TestLast<CR>
-" nmap <silent> <leader>g :TestVisit<CR>
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>r :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
-let g:rspec_command = "Dispatch bundle exec rspec -f d -c {spec}"
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>s :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>r :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
+let test#strategy = "dispatch"
+" map <Leader>t :call RunCurrentSpecFile()<CR>
+" map <Leader>s :call RunNearestSpec()<CR>
+" map <Leader>r :call RunLastSpec()<CR>
+" map <Leader>a :call RunAllSpecs()<CR>
+" let g:rspec_command = "Dispatch bundle exec rspec -f d -c {spec}"
 
 " auto manage quickfix window size
 " TODO fix it not working
