@@ -1,0 +1,18 @@
+" No audible bell
+set vb
+
+" Increase gui vim font size (11 is too small)
+set guifont=Menlo_Regular:h13
+
+" No Toolbar
+set guioptions-=T
+
+" Use console dialogs
+set guioptions+=c
+
+" RSPEC
+let g:rspec_runner = "os_x_iterm2"
+let g:rspec_command = "bundle exec rspec {spec}"
+
+" IndentLine
+let g:indentLine_color_gui = '#A4E57E'

@@ -1,0 +1,30 @@
+ZSH=$HOME/.oh-my-zsh
+ZSH_THEME="chris"
+DISABLE_AUTO_TITLE="true"
+plugins=(git)
+source $ZSH/oh-my-zsh.sh
+unsetopt correct_all
+ssh-add -A &> /dev/null
+
+alias vi='/usr/local/bin/vim'
+alias vim='/usr/local/bin/vim'
+alias vimdiff='/usr/local/bin/vimdiff'
+alias ccba='/Volumes/BACKUP/PROJECTS/UPWORK/Buzzware/codes'
+alias c='/Volumes/BACKUP/PROJECTS'
+alias i.freewheeler.com='/Volumes/BACKUP/PROJECTS/UPWORK/Buzzware/codes/rails-codes/i.freewheeler.com'
+alias app.freewheeler.com='/Volumes/BACKUP/PROJECTS/UPWORK/Buzzware/codes/rails-codes/app.freewheeler.com'
+alias riverwise-browser='/Volumes/BACKUP/PROJECTS/UPWORK/Buzzware/codes/ember-codes/riverwise/riverwise-browser'
+alias riverwise-server='/Volumes/BACKUP/PROJECTS/UPWORK/Buzzware/codes/ember-codes/riverwise/riverwise-server'
+alias secretcodez='/Volumes/BACKUP/PROJECTS/UPWORK/Buzzware/codes/ember-codes/secretcodez'
+
+# working directory
+alias i.freewheeler.com='/Volumes/BACKUP/PROJECTS/UPWORK/Buzzware/codes/working/i.freewheeler.com'
+alias riverwise-browser='/Volumes/BACKUP/PROJECTS/UPWORK/Buzzware/codes/working/riverwise/riverwise-browser'
+alias riverwise-server='/Volumes/BACKUP/PROJECTS/UPWORK/Buzzware/codes/working/riverwise/riverwise-server'
+alias working='/Volumes/BACKUP/PROJECTS/UPWORK/Buzzware/codes/working'
+
+# manually enable/disable nvm
+# it is making zsh load time too damn slow
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+eval "$(rbenv init -)"

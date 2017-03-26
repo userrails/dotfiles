@@ -1,0 +1,64 @@
+" alternative to grep
+Plug 'mileszs/ack.vim'
+
+" sidebar
+Plug 'scrooloose/nerdtree'
+
+" advance vim repeat (.)
+Plug 'tpope/vim-repeat'
+
+" auto create new directory if not exists
+Plug 'pbrisbin/vim-mkdir'
+" fuzzy find
+Plug 'ctrlpvim/ctrlp.vim'
+
+" comment
+Plug 'vim-scripts/tComment'
+
+" auto add closing pairs
+Plug 'jiangmiao/auto-pairs'
+
+" auto add end tag
+Plug 'tpope/vim-endwise'
+
+" language pack (on demand)
+Plug 'sheerun/vim-polyglot'
+
+" rspec runner made easy
+Plug 'thoughtbot/vim-rspec'
+
+" run various tests
+" Plug 'janko-m/vim-test'
+
+" don't loose focus from editor when running commands
+Plug 'tpope/vim-dispatch'
+
+" RUBY AND RAILS
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rake'
+" Plug 'tpope/vim-bundler'     " it is making vim load time too damn slow
+
+" quickly open alternate file
+Plug 'tpope/vim-projectionist'
+
+" EMBER JS
+Plug 'dsawardekar/portkey'
+Plug 'dsawardekar/ember.vim'
+
+" HTML
+Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-surround'
+Plug 'vim-scripts/HTML-AutoCloseTag'
+
+" snippets
+Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+
+" REST CLIENT
+Plug 'diepm/vim-rest-console'
+
+" THEME
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'Yggdroot/indentLine'
+
