@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: before .. do ... end
+# key: beforedo
+# --
+before do
+  $0
+end

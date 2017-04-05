@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: attr_[reader/writer/accessor] :name
+# key: attr
+# --
+attr_${1:reader} :${name}

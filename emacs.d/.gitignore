@@ -1,0 +1,15 @@
+ido.last
+eshell
+auto-save-list
+elpa
+smex-items
+recentf
+recentf~
+projectile-bookmarks.eld
+rake.cache
+*.*~
+.mc-lists.el
+var/
+tramp
+url/
+savefile/

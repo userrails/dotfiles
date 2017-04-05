@@ -1,7 +1,7 @@
 " Encoding
 set encoding=utf-8
 set fileencoding=utf-8
-set fileencodings=utf-8
+set fileencoding=utf-8
 
 " set auto indent
 set autoindent
@@ -13,7 +13,7 @@ set expandtab     " use space not tab
 set autoindent
 
 " Remap leader key
-let mapleader = " "
+let mapleader=" "
 
 " Enable hidden buffers
 set hidden
@@ -24,33 +24,25 @@ set hlsearch                      " highlight all search matches
 set cursorline                    " highlight current line
 set smartcase                     " pay attention to case when caps are used
 
-" fast terminal connection
-set ttyfast
-
-" enable visual bell (disable audio bell)
+" enable visual bel (disable audio bell)
 set vb
 
 " reload file changed outside vim
 set autoread
 
-" COMMON EDITOR SETTINGS
-set relativenumber                " show relative line numbers
-set number                        " also show current line number
-set showmatch                     " highlight matching brackets
-set scrolloff=2                   " minimum lines above/below cursor
-set nofoldenable                  " disable code folding
-set clipboard=unnamed             " use the system clipboard
-
-" decrease timeout for faster insert with 'O'
-set timeoutlen=500
-
-set lazyredraw
+" common editor settings
+set showmatch           " highlight matching brackets
+set scrolloff=2         " minimum lines above/blow cursor
+set nofoldenable        " disable code folding
 
 " hint to keep lines short
 if exists('+colorcolumn')
   set colorcolumn=80
 endif
 
+" Open new split panes to right and bottom, which feels more natural
+" set splitbelow
+set splitright
 " Auto resize Vim splits to active split
 set winwidth=104
 set winheight=5
@@ -63,14 +55,13 @@ let g:mustache_abbreviations = 1
 " Remove trailing whitespace on save for ruby files.
 au BufWritePre *.rb :%s/\s\+$//e
 
-" *****************************************************************************
-" THEME
-" *****************************************************************************
+" *******************************************
+"                 THEME
+" *******************************************
 
-" set dark background and color scheme
 set background=dark
 colorscheme base16-railscasts
-" set up some custom colors
+" further customization
 highlight clear SignColumn
 highlight VertSplit    ctermbg=236
 highlight ColorColumn  ctermbg=237
@@ -85,7 +76,6 @@ highlight Visual       ctermbg=3   ctermfg=0
 highlight Pmenu        ctermbg=240 ctermfg=12
 highlight PmenuSel     ctermbg=3   ctermfg=1
 highlight SpellBad     ctermbg=0   ctermfg=1
-
 " highlight trailing spaces in annoying red
 highlight ExtraWhitespace ctermbg=1 guibg=red
 match ExtraWhitespace /\s\+$/
@@ -93,7 +83,6 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
-
 " AIRLINE
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
@@ -108,9 +97,10 @@ let g:indentLine_color_term = 239
 " let g:indentLine_char = '│'
 let g:indentLine_faster = 1
 
-" *****************************************************************************
-" SEARCH, FUZZY FIND AND CONFIGURATIONS
-" *****************************************************************************
+
+" *******************************************
+" SEARCH, FUZZY FIND AND CONFIGURATION
+" *******************************************
 
 " set ack as grep
 set grepprg=ack
@@ -136,12 +126,13 @@ set wildmode=list:longest,full
 set wildignore+=*/tmp/*,*/node_modules/*,*/bower_components/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 
 " NERDTree configurations
-map <leader>\ :NERDTreeToggle<CR>
+map <c-\> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+noremap <leader>0 :NERDTreeFocus<CR>
 
-" *****************************************************************************
-" BINDINGS
-" *****************************************************************************
+" *******************************************
+"             BINDINGS
+" *******************************************
 
 " markdown preview
 map <leader>m :!open -a "Macdown" %<cr><cr>
@@ -152,14 +143,19 @@ map <leader>l :!clear && git log -p %<cr>
 map <leader>d :!clear && git diff %<cr>
 
 " map Silver Searcher
-map <leader>a :Ag!<space>
+" map <leader>a :Ag!<space>
+" bind \ (backward slash) to grep shortcut
+command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+nnoremap \ :Ag<SPACE>
+" Ag will search from project root
+let g:ag_working_path_mode="r"
 
 " clear the command line and search highlighting
 noremap <esc> :nohl<return><esc>
 
 " toggle spell check with <F5>
 map <F5> :setlocal spell! spelllang=en_us<cr>
-imap <F5> <ESC>:setlocal spell! spelllang=en_us<cr>
+imap <F5> <ESC>:setlocal spell! spelllang=en_us<cr><Paste>
 
 " rename current file, via Gary Bernhardt
 function! RenameFile()
@@ -173,26 +169,6 @@ function! RenameFile()
 endfunction
 map <leader>n :call RenameFile()<cr>
 
-" vim-test plugin
-nmap <silent> <leader>s :TestNearest<CR>
-nmap <silent> <leader>t :TestFile<CR>
-nmap <silent> <leader>a :TestSuite<CR>
-nmap <silent> <leader>r :TestLast<CR>
-nmap <silent> <leader>g :TestVisit<CR>
-" let test#strategy = "dispatch"
-" map <Leader>t :call RunCurrentSpecFile()<CR>
-" map <Leader>s :call RunNearestSpec()<CR>
-" map <Leader>r :call RunLastSpec()<CR>
-" map <Leader>a :call RunAllSpecs()<CR>
-" let g:rspec_command = "Dispatch bundle exec rspec -f d -c {spec}"
-
-" auto manage quickfix window size
-" TODO fix it not working
-au FileType qf call AdjustWindowHeight(3, 10)
-function! AdjustWindowHeight(minheight, maxheight)
-  exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
-endfunction
-
 " remap vrc_trigger (vim rest console) to c-k
 let g:vrc_trigger = '<C-k>'
 
@@ -201,18 +177,6 @@ nnoremap <CR> o<Esc>
 
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-
-" bind \ (backward slash) to grep shortcut
-command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-nnoremap \ :Ag<SPACE>
-
-" Ag will search from project root
-let g:ag_working_path_mode="r"
-
-" NERDTREE
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-map <C-\> :NERDTreeToggle<CR>
-noremap <Leader>0 :NERDTreeFocus<CR>
 
 " Add vim notes in dropbox/notes directory (vim.notes)
 let g:notes_directories = ['~/Dropbox/Notes']
@@ -231,9 +195,7 @@ nmap <C-x> :bp <BAR> bd #<CR>
 noremap ,o :!echo `git url`/blob/`git rev-parse --abbrev-ref HEAD`/%\#L<C-R>=line('.')<CR> \| xargs open<CR><CR>
 
 " Re-indent everything, set cursor back to current line
-noremap <C-=> gg=G''
+" noremap <C-i> gg=G''
 
 " BROKEN: right now (should work out of the box)
 au  BufNewFile,BufRead *.handlebars,*.hbs set filetype=html.handlebars syntax=mustache | runtime! ftplugin/mustache.vim ftplugin/mustache*.vim ftplugin/mustache/*.vim
-
-nmap <silent> <F5> :! open %<CR>

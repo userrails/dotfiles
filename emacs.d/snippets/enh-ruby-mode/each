@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: each do ... end
+# key: each
+# --
+${1:obj}.each do |${2:item}|
+  $0
+end

@@ -11,17 +11,20 @@ alias vim='/usr/local/bin/vim'
 alias vimdiff='/usr/local/bin/vimdiff'
 alias ccba='/Volumes/BACKUP/PROJECTS/UPWORK/Buzzware/codes'
 alias c='/Volumes/BACKUP/PROJECTS'
-alias i.freewheeler.com='/Volumes/BACKUP/PROJECTS/UPWORK/Buzzware/codes/rails-codes/i.freewheeler.com'
-alias app.freewheeler.com='/Volumes/BACKUP/PROJECTS/UPWORK/Buzzware/codes/rails-codes/app.freewheeler.com'
+alias freewheeler='/Volumes/BACKUP/PROJECTS/UPWORK/Buzzware/codes/rails-codes/app.freewheeler.com'
 alias riverwise-browser='/Volumes/BACKUP/PROJECTS/UPWORK/Buzzware/codes/ember-codes/riverwise/riverwise-browser'
 alias riverwise-server='/Volumes/BACKUP/PROJECTS/UPWORK/Buzzware/codes/ember-codes/riverwise/riverwise-server'
 alias secretcodez='/Volumes/BACKUP/PROJECTS/UPWORK/Buzzware/codes/ember-codes/secretcodez'
 
 # working directory
-alias i.freewheeler.com='/Volumes/BACKUP/PROJECTS/UPWORK/Buzzware/codes/working/i.freewheeler.com'
+alias identity-server='/Volumes/BACKUP/PROJECTS/UPWORK/Buzzware/codes/working/i.freewheeler.com'
 alias riverwise-browser='/Volumes/BACKUP/PROJECTS/UPWORK/Buzzware/codes/working/riverwise/riverwise-browser'
 alias riverwise-server='/Volumes/BACKUP/PROJECTS/UPWORK/Buzzware/codes/working/riverwise/riverwise-server'
 alias working='/Volumes/BACKUP/PROJECTS/UPWORK/Buzzware/codes/working'
+
+
+# work
+alias nast='~/Dropbox/nast/'
 
 # manually enable/disable nvm
 # it is making zsh load time too damn slow

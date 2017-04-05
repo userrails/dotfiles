@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: it { expect(...).to eq(...) }
+# key: ite
+# --
+it { expect(${1:expectation}).to ${2:eq}($0) }
