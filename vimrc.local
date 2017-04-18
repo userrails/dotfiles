@@ -1,3 +1,5 @@
+set nocompatible
+
 " Encoding
 set encoding=utf-8
 set fileencoding=utf-8
@@ -11,6 +13,12 @@ set tabstop=2
 set shiftwidth=2
 set expandtab     " use space not tab
 set autoindent
+
+" customize indentation behavior by filetype
+au FileType html setlocal shiftwidth=4 tabstop=4    " html
+au FileType css setlocal shiftwidth=4 tabstop=4     " css
+au FileType javascript setlocal shiftwidth=2 tabstop=2      " javascript
+au FileType json setlocal shiftwidth=4 tabstop=4      " json
 
 " Remap leader key
 let mapleader = " "
@@ -136,8 +144,9 @@ set wildmode=list:longest,full
 set wildignore+=*/tmp/*,*/node_modules/*,*/bower_components/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 
 " NERDTree configurations
-map <leader>\ :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+map <C-\> :NERDTreeToggle<CR>
+noremap <Leader>0 :NERDTreeFocus<CR>
 
 " *****************************************************************************
 " BINDINGS
@@ -180,18 +189,6 @@ nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>r :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
 " let test#strategy = "dispatch"
-" map <Leader>t :call RunCurrentSpecFile()<CR>
-" map <Leader>s :call RunNearestSpec()<CR>
-" map <Leader>r :call RunLastSpec()<CR>
-" map <Leader>a :call RunAllSpecs()<CR>
-" let g:rspec_command = "Dispatch bundle exec rspec -f d -c {spec}"
-
-" auto manage quickfix window size
-" TODO fix it not working
-au FileType qf call AdjustWindowHeight(3, 10)
-function! AdjustWindowHeight(minheight, maxheight)
-  exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
-endfunction
 
 " remap vrc_trigger (vim rest console) to c-k
 let g:vrc_trigger = '<C-k>'
@@ -209,23 +206,21 @@ nnoremap \ :Ag<SPACE>
 " Ag will search from project root
 let g:ag_working_path_mode="r"
 
-" NERDTREE
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-map <C-\> :NERDTreeToggle<CR>
-noremap <Leader>0 :NERDTreeFocus<CR>
-
 " Add vim notes in dropbox/notes directory (vim.notes)
 let g:notes_directories = ['~/Dropbox/Notes']
 
 noremap <leader>l :bn<CR>
 noremap <leader>h :bp<CR>
 
-" open a new empty buffer
-nmap <C-t> :enew<cr>
-
-" Close the current buffer and move to the previous one
-" This replicates the idea of closing a tab
-nmap <C-x> :bp <BAR> bd #<CR>
+" Working with tabs
+nnoremap th :tabfirst<CR>
+nnoremap tj :tabnext<CR>
+nnoremap tk :tabprev<CR>
+nnoremap tl :tablast<CR>
+nnoremap tt :tabedit<Space>
+nnoremap tn :tabnext<Space>
+nnoremap tm :tabm<Space>
+nnoremap td :tabclose<CR>
 
 "" Open current line on GitHub
 noremap ,o :!echo `git url`/blob/`git rev-parse --abbrev-ref HEAD`/%\#L<C-R>=line('.')<CR> \| xargs open<CR><CR>
@@ -237,3 +232,10 @@ noremap <C-=> gg=G''
 au  BufNewFile,BufRead *.handlebars,*.hbs set filetype=html.handlebars syntax=mustache | runtime! ftplugin/mustache.vim ftplugin/mustache*.vim ftplugin/mustache/*.vim
 
 nmap <silent> <F5> :! open %<CR>
+
+" Get off my lawn
+" also from insert mode
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
