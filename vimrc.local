@@ -14,12 +14,6 @@ set shiftwidth=2
 set expandtab     " use space not tab
 set autoindent
 
-" customize indentation behavior by filetype
-au FileType html setlocal shiftwidth=4 tabstop=4    " html
-au FileType css setlocal shiftwidth=4 tabstop=4     " css
-au FileType javascript setlocal shiftwidth=2 tabstop=2      " javascript
-au FileType json setlocal shiftwidth=4 tabstop=4      " json
-
 " Remap leader key
 let mapleader = " "
 
@@ -214,8 +208,8 @@ noremap <leader>h :bp<CR>
 
 " Working with tabs
 nnoremap th :tabfirst<CR>
-nnoremap tj :tabnext<CR>
-nnoremap tk :tabprev<CR>
+nnoremap tj :tabprev<CR>
+nnoremap tk :tabnext<CR>
 nnoremap tl :tablast<CR>
 nnoremap tt :tabedit<Space>
 nnoremap tn :tabnext<Space>
