@@ -28,6 +28,9 @@ Plug 'SirVer/ultisnips'
 " REST CLIENT
 Plug 'diepm/vim-rest-console'
 
+" TABULARIZE
+Plug 'godlygeek/tabular'
+
 " THEME
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
