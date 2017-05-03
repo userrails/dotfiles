@@ -1,6 +1,9 @@
 " alternative to grep
 Plug 'mileszs/ack.vim'
 
+" supertab
+Plug 'ervandew/supertab'
+
 " sidebar
 Plug 'scrooloose/nerdtree'
 
@@ -20,6 +23,9 @@ Plug 'dsawardekar/ember.vim'
 " HTML
 Plug 'mattn/emmet-vim'
 Plug 'vim-scripts/HTML-AutoCloseTag'
+
+" ERB, php, jsp, etc
+Plug 'tpope/vim-ragtag'
 
 " snippets
 Plug 'honza/vim-snippets'

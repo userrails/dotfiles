@@ -65,6 +65,9 @@ let g:mustache_abbreviations = 1
 " Remove trailing whitespace on save for ruby files.
 au BufWritePre *.rb :%s/\s\+$//e
 
+" setup supertab to autocomplete
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
 " *****************************************************************************
 " THEME
 " *****************************************************************************
@@ -142,7 +145,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 map <C-\> :NERDTreeToggle<CR>
 noremap <Leader>0 :NERDTreeFocus<CR>
 
-
 " auto format tabularize in insert mode
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 
@@ -173,7 +175,8 @@ map <leader>d :!clear && git diff %<cr>
 map <leader>a :Ag!<space>
 
 " clear the command line and search highlighting
-noremap <esc> :nohl<return><esc>
+" BUG: it is entering to insert mode automatically
+" noremap <esc> :nohl<return><esc>
 
 " toggle spell check with <F5>
 map <F5> :setlocal spell! spelllang=en_us<cr>
