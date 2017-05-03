@@ -13,6 +13,3 @@ set guioptions+=c
 " RSPEC
 let g:rspec_runner = "os_x_iterm2"
 let g:rspec_command = "bundle exec rspec {spec}"
-
-" IndentLine
-let g:indentLine_color_gui = '#A4E57E'

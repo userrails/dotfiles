@@ -7,9 +7,6 @@ source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 ssh-add -A &> /dev/null
 
-alias vi='/usr/local/bin/vim'
-alias vim='/usr/local/bin/vim'
-alias vimdiff='/usr/local/bin/vimdiff'
 alias ccba='/Volumes/BACKUP/PROJECTS/UPWORK/Buzzware/codes'
 alias c='/Volumes/BACKUP/PROJECTS'
 alias freewheeler='/Volumes/BACKUP/PROJECTS/UPWORK/Buzzware/codes/rails-codes/app.freewheeler.com'
