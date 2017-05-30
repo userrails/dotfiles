@@ -7,19 +7,18 @@ source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 ssh-add -A &> /dev/null
 
-alias ccba='/Volumes/BACKUP/PROJECTS/UPWORK/Buzzware/codes'
-alias c='/Volumes/BACKUP/PROJECTS'
-alias freewheeler='/Volumes/BACKUP/PROJECTS/UPWORK/Buzzware/codes/rails-codes/app.freewheeler.com'
-alias riverwise-browser='/Volumes/BACKUP/PROJECTS/UPWORK/Buzzware/codes/ember-codes/riverwise/riverwise-browser'
-alias riverwise-server='/Volumes/BACKUP/PROJECTS/UPWORK/Buzzware/codes/ember-codes/riverwise/riverwise-server'
-alias secretcodez='/Volumes/BACKUP/PROJECTS/UPWORK/Buzzware/codes/ember-codes/secretcodez'
+alias freewheeler='~/Work/Buzzware/app.freewheeler.com'
+alias riverwise-browser='~/Work/Buzzware/riverwise-browser'
+alias riverwise-server='~/Work/Buzzware/riverwise-server'
+alias secretcodez='~/Work/Buzzware/secretcodez'
 
 # working directory
-alias identity-server='/Volumes/BACKUP/PROJECTS/UPWORK/Buzzware/codes/working/i.freewheeler.com'
-alias riverwise-browser='/Volumes/BACKUP/PROJECTS/UPWORK/Buzzware/codes/working/riverwise/riverwise-browser'
-alias riverwise-server='/Volumes/BACKUP/PROJECTS/UPWORK/Buzzware/codes/working/riverwise/riverwise-server'
-alias working='/Volumes/BACKUP/PROJECTS/UPWORK/Buzzware/codes/working'
-
+alias identity-server='~/Work/Buzzware/i.freewheeler.com'
+alias riverwise-browser='~/Work/Buzzware/riverwise/riverwise-browser'
+alias riverwise-server='~/Work/Buzzware/riverwise/riverwise-server'
+alias buzzware='~/Work/Buzzware'
+alias working='~/Work/Buzzware/working'
+alias nepaliAd='~/Work/Asimisoft/nepaliAd'
 
 # work
 alias nast='~/Dropbox/nast/'

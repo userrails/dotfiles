@@ -2,7 +2,7 @@
 Plug 'mileszs/ack.vim'
 
 " supertab
-Plug 'ervandew/supertab'
+" Plug 'ervandew/supertab'
 
 " sidebar
 Plug 'scrooloose/nerdtree'
@@ -27,15 +27,20 @@ Plug 'vim-scripts/HTML-AutoCloseTag'
 " ERB, php, jsp, etc
 Plug 'tpope/vim-ragtag'
 
-" snippets
-Plug 'honza/vim-snippets'
-Plug 'SirVer/ultisnips'
-
 " REST CLIENT
 Plug 'diepm/vim-rest-console'
 
 " TABULARIZE
 Plug 'godlygeek/tabular'
+
+" Markdown
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+
+" Snippets
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
 
 " THEME
 Plug 'vim-airline/vim-airline'

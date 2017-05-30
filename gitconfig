@@ -25,3 +25,6 @@
   autosquash = true
 [include]
   path = ~/.gitconfig.local
+[user]
+	email = pushparaj.badu@gmail.com
+	name = przbadu

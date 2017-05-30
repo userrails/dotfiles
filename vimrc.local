@@ -62,11 +62,20 @@ set winheight=999
 " mustache/handlebars
 let g:mustache_abbreviations = 1
 
-" Remove trailing whitespace on save for ruby files.
+" Remove trailing whitespace on save
 au BufWritePre *.rb :%s/\s\+$//e
+au BufWritePre *.html :%s/\s\+$//e
+au BufWritePre *.js :%s/\s\+$//e
+au BufWritePre *.json :%s/\s\+$//e
 
 " setup supertab to autocomplete
-let g:SuperTabDefaultCompletionType = "<c-n>"
+" let g:SuperTabDefaultCompletionType = "<c-n>"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" vim-ragtag
+let g:ragtag_global_maps = 1
 
 " *****************************************************************************
 " THEME
@@ -218,9 +227,6 @@ nnoremap \ :Ag<SPACE>
 " Ag will search from project root
 let g:ag_working_path_mode="r"
 
-" Add vim notes in dropbox/notes directory (vim.notes)
-let g:notes_directories = ['~/Dropbox/Notes']
-
 noremap <leader>l :bn<CR>
 noremap <leader>h :bp<CR>
 
@@ -233,6 +239,9 @@ nnoremap tt :tabedit<Space>
 nnoremap tn :tabnext<Space>
 nnoremap tm :tabm<Space>
 nnoremap td :tabclose<CR>
+
+" Close current buffer
+nnoremap <leader>q :bp<cr>:bd #<cr>
 
 "" Open current line on GitHub
 noremap ,o :!echo `git url`/blob/`git rev-parse --abbrev-ref HEAD`/%\#L<C-R>=line('.')<CR> \| xargs open<CR><CR>
