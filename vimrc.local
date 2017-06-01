@@ -69,7 +69,7 @@ au BufWritePre *.js :%s/\s\+$//e
 au BufWritePre *.json :%s/\s\+$//e
 
 " setup supertab to autocomplete
-" let g:SuperTabDefaultCompletionType = "<c-n>"
+let g:SuperTabDefaultCompletionType = "<c-n>"
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"

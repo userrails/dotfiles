@@ -16,6 +16,9 @@ Plug 'sheerun/vim-polyglot'
 " don't loose focus from editor when running commands
 Plug 'tpope/vim-dispatch'
 
+" Ruby/Rails
+Plug 'ecomba/vim-ruby-refactoring'
+
 " EMBER JS
 Plug 'dsawardekar/portkey'
 Plug 'dsawardekar/ember.vim'
@@ -38,6 +41,8 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 
 " Snippets
+Plug 'epilande/vim-es2015-snippets'
+Plug 'epilande/vim-react-snippets'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
