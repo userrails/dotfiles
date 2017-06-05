@@ -5,8 +5,13 @@ set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8
 
+set ffs=unix,dos,mac
+
 " set auto indent
 set autoindent
+
+" auto change directory
+set autochdir
 
 " File indentation
 set tabstop=2
@@ -68,7 +73,9 @@ au BufWritePre *.html :%s/\s\+$//e
 au BufWritePre *.js :%s/\s\+$//e
 au BufWritePre *.json :%s/\s\+$//e
 
-" setup supertab to autocomplete
+" Supertab, YCM, ultisnips
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = "<c-n>"
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
@@ -83,8 +90,15 @@ let g:ragtag_global_maps = 1
 
 " set dark background and color scheme
 set background=dark
+" set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types:h11
+
+" if (has("termguicolors"))
+"   set termguicolors
+" endif
+
 colorscheme base16-railscasts
-" set up some custom colors
+
+" setup some custom colors
 highlight clear SignColumn
 highlight VertSplit    ctermbg=236
 highlight ColorColumn  ctermbg=237
