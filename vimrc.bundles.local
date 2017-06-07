@@ -13,8 +13,8 @@ Plug 'jiangmiao/auto-pairs'
 " language pack (on demand)
 Plug 'sheerun/vim-polyglot'
 
-" don't loose focus from editor when running commands
-Plug 'tpope/vim-dispatch'
+" Vim + Tmux
+Plug 'benmills/vimux'
 
 " Ruby/Rails
 Plug 'ecomba/vim-ruby-refactoring'
@@ -52,11 +52,10 @@ Plug 'honza/vim-snippets'
 Plug 'Valloric/YouCompleteMe'
 
 " THEME
+Plug 'Yggdroot/indentLine'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'Yggdroot/indentLine'
-Plug 'chriskempson/tomorrow-theme'
-Plug 'mhartington/oceanic-next'
+Plug 'chriskempson/base16-vim'
 
 " Icons
 Plug 'ryanoasis/vim-devicons'
