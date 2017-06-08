@@ -59,10 +59,14 @@ if exists('+colorcolumn')
 endif
 
 " Auto resize Vim splits to active split
-set winwidth=104
-set winheight=5
-set winminheight=5
-set winheight=999
+" set winwidth=104
+" set winheight=5
+" set winminheight=5
+" set winheight=999
+
+" Enable mouse
+set mouse=n
+set ttymouse=xterm2
 
 " mustache/handlebars
 let g:mustache_abbreviations = 1
@@ -100,20 +104,20 @@ if filereadable(expand("~/.vimrc_background"))
 endif
 
 " setup some custom colors
-" highlight clear SignColumn
-" highlight VertSplit    ctermbg=236
+highlight clear SignColumn
+highlight VertSplit    ctermbg=236
+highlight LineNr       ctermbg=236 ctermfg=240
+highlight IncSearch    ctermbg=3   ctermfg=1
+highlight Pmenu        ctermbg=240 ctermfg=12
+highlight PmenuSel     ctermbg=3   ctermfg=1
+highlight SpellBad     ctermbg=0   ctermfg=1
 " highlight ColorColumn  ctermbg=237
-" highlight LineNr       ctermbg=236 ctermfg=240
 " highlight CursorLineNr ctermbg=236 ctermfg=240
 " highlight CursorLine   ctermbg=236
 " highlight StatusLineNC ctermbg=238 ctermfg=0
 " highlight StatusLine   ctermbg=240 ctermfg=12
-" highlight IncSearch    ctermbg=3   ctermfg=1
 " highlight Search       ctermbg=1   ctermfg=3
 " highlight Visual       ctermbg=3   ctermfg=0
-" highlight Pmenu        ctermbg=240 ctermfg=12
-" highlight PmenuSel     ctermbg=3   ctermfg=1
-" highlight SpellBad     ctermbg=0   ctermfg=1
 
 " highlight trailing spaces in annoying red
 highlight ExtraWhitespace ctermbg=1 guibg=red
