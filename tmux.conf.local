@@ -59,7 +59,7 @@ bind C-p paste-buffer
 unbind %
 bind | split-window -h
 unbind '"'
-bind - split-window -v
+bind - split-window -v -p 20
 
 # quickly switch panes
 unbind ^J
