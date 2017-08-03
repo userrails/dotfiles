@@ -53,6 +53,9 @@ set timeoutlen=500
 
 set lazyredraw
 
+" http://webpack.github.io/docs/webpack-dev-server.html#working-with-editors-ides-supporting-safe-write
+set backupcopy=yes
+
 " hint to keep lines short
 if exists('+colorcolumn')
   set colorcolumn=80
@@ -159,14 +162,19 @@ let g:ctrlp_open_new_file = 'r'
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 " USE SILVER SEARCHER FOR CTRLP
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-" rubymine like recent files
-noremap <leader>e :CtrlPBuffer<CR>
 
 " in-built fuzzy find
 set path+=**                                  " :find file inside recursive directory
 set wildmenu                                  " enable bash style tab completion
 set wildmode=list:longest,full
-set wildignore+=*/tmp/*,*/node_modules/*,*/bower_components/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
+set wildignore+=**/bower_components/*,**/node_modules/*,**/tmp/*,**/assets/images/*,**/assets/fonts/*,**/public/images/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
+
+" JSX
+let g:user_emmet_settings = {
+\  'javascript.jsx' : {
+\      'extends' : 'jsx',
+\  },
+\}
 
 " NERDTree configurations
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -286,3 +294,6 @@ nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
+
+" create/open file in current folder
+map <Leader>ee :e <C-R>=escape(expand("%:p:h"),' ') . '/'<CR>
