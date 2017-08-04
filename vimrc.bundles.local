@@ -46,6 +46,7 @@ Plug 'godlygeek/tabular'
 " Markdown
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+Plug 'suan/vim-instant-markdown'
 
 " Snippets
 Plug 'SirVer/ultisnips'
