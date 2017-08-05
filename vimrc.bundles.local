@@ -32,7 +32,7 @@ Plug 'przbadu/vim-react-snippets'
 
 " HTML
 Plug 'mattn/emmet-vim'
-Plug 'vim-scripts/HTML-AutoCloseTag'
+Plug 'alvan/vim-closetag'
 
 " ERB, php, jsp, etc
 Plug 'tpope/vim-ragtag'
