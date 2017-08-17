@@ -23,7 +23,8 @@ alias nepaliAd='~/Work/Asimisoft/nepaliAd'
 # work
 alias nast='~/Dropbox/nast/'
 
-alias vi ='/usr/local/bin/vim'
+# alias vi ='/usr/local/bin/vim'
+alias vi vim
 alias v='/usr/local/bin/vim'
 
 # manually enable/disable nvm
@@ -42,5 +43,6 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 
 # Android
 export ANDROID_HOME=/Users/przbadu/Library/Android/sdk
-export PATH=$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$PATH
+export ANDROID_SDK_ROOT=$ANDROID_HOME
+export PATH=$ANDROID_HOME:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$PATH
 alias shake='adb shell input keyevent 82'
