@@ -22,6 +22,12 @@ Plug 'benmills/vimux'
 " Ruby/Rails
 Plug 'ecomba/vim-ruby-refactoring'
 
+" C#
+Plug 'OmniSharp/omnisharp-vim'
+Plug 'tpope/vim-dispatch'
+" Plug 'vim-syntastic/syntastic'
+Plug 'OrangeT/vim-csharp'
+
 " Javascript
 Plug 'dsawardekar/portkey'
 Plug 'dsawardekar/ember.vim'
