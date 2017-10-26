@@ -14,7 +14,8 @@
   st = status
 [core]
   excludesfile = ~/.gitignore
-  autocrlf = input
+	autocrlf = true
+	safecrlf = false
 [merge]
   ff = only
 [commit]
@@ -27,4 +28,4 @@
   path = ~/.gitconfig.local
 [user]
 	email = pushparaj.badu@gmail.com
-	name = przbadu
+	name = Pushpa Raj Badu

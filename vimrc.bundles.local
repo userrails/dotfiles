@@ -16,46 +16,35 @@ Plug 'jiangmiao/auto-pairs'
 " language pack (on demand)
 Plug 'sheerun/vim-polyglot'
 
-" Vim + Tmux
+" Vim + Tmux + dispatch
 Plug 'benmills/vimux'
-
-" Ruby/Rails
-Plug 'ecomba/vim-ruby-refactoring'
-
-" C#
-Plug 'OmniSharp/omnisharp-vim'
 Plug 'tpope/vim-dispatch'
-" Plug 'vim-syntastic/syntastic'
-Plug 'OrangeT/vim-csharp'
 
 " Javascript
 Plug 'dsawardekar/portkey'
-Plug 'dsawardekar/ember.vim'
 Plug 'w0rp/ale' " code linter
 Plug 'ternjs/tern_for_vim'
 Plug 'przbadu/vim-es2015-snippets'
 Plug 'przbadu/vim-react-snippets'
+" Plug 'leafgarland/typescript-vim'
+" Plug 'bdauria/angular-cli.vim'
+" Plug 'posva/vim-vue'
 
 " HTML
 Plug 'mattn/emmet-vim'
 Plug 'alvan/vim-closetag'
+" CSS
+Plug 'ap/vim-css-color'
 
 " ERB, php, jsp, etc
 Plug 'tpope/vim-ragtag'
-
-" REST CLIENT
-Plug 'diepm/vim-rest-console'
 
 " TABULARIZE
 Plug 'godlygeek/tabular'
 
 " Markdown
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
-Plug 'suan/vim-instant-markdown'
-
-" Image
-Plug 'ashisha/image.vim'
+" Plug 'plasticboy/vim-markdown'
+" Plug 'suan/vim-instant-markdown'
 
 " Snippets
 Plug 'SirVer/ultisnips'
@@ -63,10 +52,6 @@ Plug 'honza/vim-snippets'
 
 " Autocomplete
 Plug 'Valloric/YouCompleteMe'
-
-" org mode
-Plug 'jceb/vim-orgmode'
-Plug 'tpope/vim-speeddating'
 
 " THEME
 Plug 'Yggdroot/indentLine'

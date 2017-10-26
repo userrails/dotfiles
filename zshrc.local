@@ -2,54 +2,31 @@ ZSH=$HOME/.oh-my-zsh
 # ZSH_THEME="chris"
 ZSH_THEME="robbyrussell"
 DISABLE_AUTO_TITLE="true"
+
 plugins=(git)
+
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 ssh-add -A &> /dev/null
 
-alias freewheeler='~/Work/Buzzware/app.freewheeler.com'
-alias riverwise-browser='~/Work/Buzzware/riverwise-browser'
-alias riverwise-server='~/Work/Buzzware/riverwise-server'
-alias secretcodez='~/Work/Buzzware/secretcodez'
-
-# working directory
-alias identity-server='~/Work/Buzzware/i.freewheeler.com'
-alias riverwise-browser='~/Work/Buzzware/riverwise/riverwise-browser'
-alias riverwise-server='~/Work/Buzzware/riverwise/riverwise-server'
-alias buzzware='~/Work/Buzzware'
-alias working='~/Work/Buzzware/working'
-alias nepaliAd='~/Work/Asimisoft/nepaliAd'
-
-# work
-alias nast='~/Dropbox/nast/'
-
-# alias vi ='/usr/local/bin/vim'
-alias vi vim
-alias v='/usr/local/bin/vim'
-
-# Alias docker commands
-alias dc='docker-compose'
-alias dcr='docker-compose run'
 
 # manually enable/disable nvm
 # it is making zsh load time too damn slow
 export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-eval "$(rbenv init -)"
+# source $(brew --prefix nvm)/nvm.sh
 
-# alt + arrow keys not working, resolve  them
-bindkey "^[[1;3D" forward-word
-bindkey "^[[1;3c" backward-word
+# rbenv
+eval "$(rbenv init -)"
 
 # Base 16 color setting
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
 # Android
-export ANDROID_HOME=/Users/przbadu/Library/Android/sdk
+# export ANDROID_HOME=/Users/przbadu/Library/Android/sdk
+export ANDROID_HOME=/usr/local/share/android-sdk
 export ANDROID_SDK_ROOT=$ANDROID_HOME
 export PATH=$ANDROID_HOME:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$PATH
-alias shake='adb shell input keyevent 82'
 
 # VSCode
 code () {

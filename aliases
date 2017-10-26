@@ -15,5 +15,38 @@ alias s="rspec"
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 
+# alias for git
+# alias g="git"
+# alias ga="git add"
+# alias gb="git branch"
+# alias gc="git commit"
+# alias gco="git checkout"
+# alias gd="git diff"
+# alias gl="git pull"
+# alias gp="git push"
+# alias gst="git status"
+
+# alias vi ='/usr/local/bin/vim'
+alias v='/usr/local/bin/vim'
+
+# Alias docker commands
+alias dc='docker-compose'
+alias dcr='docker-compose run'
+
+# tmux
+alias tn='tmux new'
+alias ta='tmux attach'
+alias tl='tmux ls'
+alias tk='tmux kill-session -t'
+
+# redis-server
+alias rs='redis-server /usr/local/etc/redis.conf'
+
+# android
+alias shake='adb shell input keyevent 82'
+
+# nvm
+alias load-nvm='source $(brew --prefix nvm)/nvm.sh'
+
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local

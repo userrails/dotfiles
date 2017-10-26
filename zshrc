@@ -37,7 +37,9 @@ _load_settings() {
     fi
   fi
 }
-_load_settings "$HOME/.zsh/configs"
+
+# Increasing zsh load time
+# _load_settings "$HOME/.zsh/configs"
 
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
