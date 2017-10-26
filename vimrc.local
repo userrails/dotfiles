@@ -79,15 +79,6 @@ set ttymouse=xterm2
 " mustache/handlebars
 let g:mustache_abbreviations = 1
 
-" Remove trailing whitespace on save
-" au BufWritePre *.rb :%s/\s\+$//e
-" au BufWritePre *.html :%s/\s\+$//e
-" au BufWritePre *.js :%s/\s\+$//e
-au BufWritePre *.jsx :%s/\s\+$//e
-au BufWritePre *.json :%s/\s\+$//e
-
-au BufWritePre *.md set nowrap textwidth=0
-
 " Ale
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
@@ -122,11 +113,24 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
 
+" Remove trailing whitespace on save
+augroup TrailingSpaces
+  autocmd!
+  autocmd BufWritePre *.{rb,html,js,jsx,json} let w:wv = winsaveview() | %s/\s\+$//e | call winrestview(w:wv)
+augroup END
+
+augroup SpecialProject
+    autocmd!
+    autocmd BufNewFile,BufRead ~/Work/RubberStamp/po-app/**/* autocmd! TrailingSpaces
+augroup END
+
+au BufWritePre *.md set nowrap textwidth=0
+
 set foldmethod=syntax
 
 " AIRLINE
 " Enable the list of buffers
-" let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_theme='jellybeans'
@@ -290,13 +294,6 @@ let g:surround_61 = "<%= \r %>"
 " Vimux
 map <silent> <leader>vp :VimuxPromptCommand<CR>
 
-" Get off my lawn
-" also from insert mode
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
-
 " create/open file in current folder
 map <Leader>ee :e <C-R>=escape(expand("%:p:h"),' ') . '/'<CR>
 
@@ -320,3 +317,10 @@ let g:SuperTabClosePreviewOnPopupClose = 1
 " enable syntastic only when I write file
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
+
+" Get off my lawn
+" also from insert mode
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
