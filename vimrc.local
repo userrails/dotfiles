@@ -54,7 +54,7 @@ set nofoldenable                  " disable code folding
 set foldlevel=2
 
 " decrease timeout for faster insert with 'O'
-set timeoutlen=500
+set timeoutlen=200
 
 set lazyredraw
 
@@ -99,9 +99,9 @@ let g:ragtag_global_maps = 1
 
 " set dark background and color scheme
 set background=dark
-if filereadable(expand("~/.vimrc_background"))
+if !exists('g:colors_name') || g:colors_name != 'Tomorrow-Night'
   let base16colorspace=256
-  source ~/.vimrc_background
+  colorscheme Tomorrow-Night
 endif
 
 " highlight trailing spaces in annoying red
@@ -119,7 +119,7 @@ augroup TrailingSpaces
   autocmd BufWritePre *.{rb,html,js,jsx,json} let w:wv = winsaveview() | %s/\s\+$//e | call winrestview(w:wv)
 augroup END
 
-augroup SpecialProject
+augroup ProjectSpecific
     autocmd!
     autocmd BufNewFile,BufRead ~/Work/RubberStamp/po-app/**/* autocmd! TrailingSpaces
 augroup END
@@ -133,7 +133,7 @@ set foldmethod=syntax
 let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
-let g:airline_theme='jellybeans'
+let g:airline_theme='wombat'
 
 " IndentLine
 let g:indentLine_enabled = 1
@@ -209,6 +209,9 @@ endfunction
 " *********************************************************
 " BINDINGS
 " *********************************************************
+
+" map jj to ESC
+imap jj <ESC>
 
 " map git commands
 map <leader>ga :Gwrite<cr>
