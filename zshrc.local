@@ -28,13 +28,17 @@ export ANDROID_HOME=/usr/local/share/android-sdk
 export ANDROID_SDK_ROOT=$ANDROID_HOME
 export PATH=$ANDROID_HOME:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$PATH
 
+# EDITORS
+export EDITOR=vim
+export VISUAL=vim
+
 # VSCode
-code () {
-  if [[ $# = 0 ]]
-  then
-    open -a "Visual Studio Code"
-  else
-    [[ $1 = /* ]] && F="$1" || F="$PWD/${1#./}"
-    open -a "Visual Studio Code" --args "$F"
-  fi
-}
+# code () {
+#   if [[ $# = 0 ]]
+#   then
+#     open -a "Visual Studio Code"
+#   else
+#     [[ $1 = /* ]] && F="$1" || F="$PWD/${1#./}"
+#     open -a "Visual Studio Code" --args "$F"
+#   fi
+# }

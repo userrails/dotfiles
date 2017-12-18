@@ -43,12 +43,16 @@ Plug 'tpope/vim-ragtag'
 Plug 'godlygeek/tabular'
 
 " Markdown
+" Plug 'hashrocket/vim-macdown'
 " Plug 'plasticboy/vim-markdown'
 " Plug 'suan/vim-instant-markdown'
 
 " Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+
+" Debugger
+" Plug 'astashov/vim-ruby-debugger'
 
 " Autocomplete
 Plug 'Valloric/YouCompleteMe'

@@ -27,7 +27,7 @@ alias path='echo $PATH | tr -s ":" "\n"'
 # alias gst="git status"
 
 # alias vi ='/usr/local/bin/vim'
-alias v='/usr/local/bin/vim'
+# alias v='/usr/local/bin/vim'
 
 # Alias docker commands
 alias dc='docker-compose'
